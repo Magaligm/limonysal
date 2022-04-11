@@ -18,10 +18,8 @@
         </div>
       </div>
     </nav>
-
     <!-- Header -->
-    <%- include ("./partials/header") %>
-
+    <%- include('partials/header')%>
     <!-- Page content -->
     <div class="ps-content">
       <!-- About Section -->
@@ -35,7 +33,6 @@
             height="750"
           />
         </div>
-
         <div class="ps-col m6 ps-padding-large">
           <h1 class="ps-center">Pimienta & Sal</h1>
           <br />
@@ -57,20 +54,19 @@
           </p>
         </div>
       </div>
-
       <hr />
       <!-- Menu Section -->
       <div class="ps-row ps-padding-64" id="menu">
         <div class="ps-col l6 ps-padding-large">
           <h1 class="ps-center">Nuestro Menu</h1>
           <br />
-          <%- include("/partials/menusection") <% menu.forEach(plato => { %>
-          <h4><a href="/detalle/<%= plato.id %>"><%= plato.titulo %></a></h4>
-          })
+          <% menu.forEach(plato => { %>
+          <h4><a href="/detalle/<%= plato.id %>"></a></h4>
           <p class="ps-text-grey">
-            <%= plato.descripcionCorta %> U$S <%= plato.precio %>
+            <% plato.descripcionCorta %> U$S <% plato.precio %>
           </p>
           <br />
+          <% }) %>
         </div>
 
         <div class="ps-col l6 ps-padding-large ps-img-menu">
@@ -81,7 +77,6 @@
           />
         </div>
       </div>
-
       <!-- Footer -->
       <%- include("./partials/footer") %>
     </div>
